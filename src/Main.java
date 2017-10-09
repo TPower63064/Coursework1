@@ -12,11 +12,7 @@ import java.util.Optional;
 
 public class Main extends Application {
     private static TextField txtFieldMessage;
-    private static TextField txtFieldName;
-    private static TextField txtFieldCountry;
     private static ListView<Main> proListView;
-    private static ArrayList<Main> proArrList = new ArrayList<>();
-
 
 
     @Override
@@ -33,29 +29,40 @@ public class Main extends Application {
         proListView.setLayoutY(60);
 
         Label label = new Label("Enter Details");
-        label.setLayoutX(334);
-        label.setLayoutY(210);
+        label.setLayoutX(189);
+        label.getStyleClass().add("title_button");
+        label.setLayoutY(190);
         root.getChildren().add(label);
 
+        Label label2 = new Label("Student ID");
+        label2.setLayoutX(189);
+        label2.getStyleClass().add("label_button");
+        label2.setLayoutY(240);
+        root.getChildren().add(label2);
+
+        Label label3 = new Label("Password");
+        label3.setLayoutX(189);
+        label3.getStyleClass().add("label_button");
+        label3.setLayoutY(290);
+        root.getChildren().add(label3);
+
         txtFieldMessage = new TextField();
-        txtFieldMessage.setLayoutX(194);
+        txtFieldMessage.setLayoutX(270);
         txtFieldMessage.setLayoutY(240);
-        txtFieldMessage.setPrefWidth(400);
-        txtFieldMessage.setPromptText("Enter Student ID");
+        txtFieldMessage.setPrefWidth(250);
         root.getChildren().add(txtFieldMessage);
 
         txtFieldMessage = new TextField();
-        txtFieldMessage.setLayoutX(194);
+        txtFieldMessage.setLayoutX(270);
         txtFieldMessage.setLayoutY(290);
-        txtFieldMessage.setPrefWidth(400);
-        txtFieldMessage.setPromptText("Enter Password");
+        txtFieldMessage.setPrefWidth(250);
         root.getChildren().add(txtFieldMessage);
 
         Button btn = new Button();
         btn.setText("Enter");
-        btn.setLayoutX(344);
-        btn.getStyleClass().add("funky_button");
-        stage.setOnCloseRequest((WindowEvent we) -> closeStage(stage));
+        btn.setLayoutX(334);
+        scene.getStylesheets().add("stylesheet.css");
+        btn.getStyleClass().add("enter_button");
         btn.setLayoutY(340);
         btn.setOnAction((ActionEvent ae) -> openNewStage(root));
 
@@ -67,7 +74,7 @@ public class Main extends Application {
 
 
     private static void openNewStage(Pane parent) {
-        StageTwo newStage = new StageTwo(parent);
+        new StageTwo(parent);
     }
 
     public static class StageTwo {
@@ -91,6 +98,7 @@ public class Main extends Application {
             stage.setScene(scene);
             stage.setOnCloseRequest((WindowEvent we) -> closeStage(stage));
             stage.show();
+            scene.getStylesheets().add("stylesheet.css");
 
             proListView = new ListView<>();
             proListView.setLayoutX(700);
