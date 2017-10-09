@@ -106,16 +106,15 @@ public class Main extends Application {
 
             Button btn = new Button();
             btn.setText("Start quiz");
-            btn.setLayoutX(344);
+            btn.setLayoutX(304);
             btn.getStyleClass().add("start_button");
             btn.setLayoutY(340);
             btn.setOnAction((ActionEvent ae) -> openNewStage(root));
-            stage.setOnCloseRequest((WindowEvent we) -> closeStage(stage));
             root.getChildren().add(btn);
 
             Button btn2 = new Button();
             btn2.setText("Give feedback");
-            btn2.setLayoutX(410);
+            btn2.setLayoutX(470);
             btn2.getStyleClass().add("start_button");
             btn2.setLayoutY(340);
             btn2.setOnAction((ActionEvent ae) -> openNewStage2(root));
@@ -132,7 +131,7 @@ public class Main extends Application {
     }
 
     private static void openNewStage2(Pane parent) {
-        StageThree newStage = new StageThree(parent);
+        new StageThree(parent);
     }
 
     public static class StageThree {

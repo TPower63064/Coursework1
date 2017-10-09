@@ -17,6 +17,17 @@
 
 }
 
+.start_button {
+    -fx-font-size: 20px;
+    -fx-font-family: "Arial Black";
+    -fx-fill: #818181;
+    -fx-effect: innershadow(three-pass-box, rgba(0, 0, 0, 0.7), 6, 0.0, 0, 2);
+}
+
+.start_button:hover {
+    -fx-background-color: linear-gradient(#2A5058, #61a2b1);
+}
+
 .label_button {
     -fx-font-size: 14px;
     -fx-font-weight: bold;
