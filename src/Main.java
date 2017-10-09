@@ -55,15 +55,18 @@ public class Main extends Application {
         btn.setText("Enter");
         btn.setLayoutX(344);
         btn.getStyleClass().add("funky_button");
+        stage.setOnCloseRequest((WindowEvent we) -> closeStage(stage));
         btn.setLayoutY(340);
         btn.setOnAction((ActionEvent ae) -> openNewStage(root));
+
         root.getChildren().add(btn);
 
         stage.show();
         stage.setOnCloseRequest ((WindowEvent we) -> displayCloseDialog(we));
     }
 
-    private void openNewStage(Pane parent) {
+
+    private static void openNewStage(Pane parent) {
         StageTwo newStage = new StageTwo(parent);
     }
 
@@ -89,6 +92,26 @@ public class Main extends Application {
             stage.setOnCloseRequest((WindowEvent we) -> closeStage(stage));
             stage.show();
 
+            proListView = new ListView<>();
+            proListView.setLayoutX(700);
+            proListView.setLayoutY(60);
+
+            Button btn = new Button();
+            btn.setText("Start quiz");
+            btn.setLayoutX(344);
+            btn.getStyleClass().add("start_button");
+            btn.setLayoutY(340);
+            btn.setOnAction((ActionEvent ae) -> openNewStage(root));
+            stage.setOnCloseRequest((WindowEvent we) -> closeStage(stage));
+            root.getChildren().add(btn);
+
+            Button btn2 = new Button();
+            btn2.setText("Give feedback");
+            btn2.setLayoutX(410);
+            btn2.getStyleClass().add("start_button");
+            btn2.setLayoutY(340);
+            btn2.setOnAction((ActionEvent ae) -> openNewStage2(root));
+            root.getChildren().add(btn2);
         }
 
         public void closeStage(Stage stage) {
@@ -99,7 +122,46 @@ public class Main extends Application {
         }
 
     }
-    private static void displayCloseDialog(WindowEvent we) {
+
+    private static void openNewStage2(Pane parent) {
+        StageThree newStage = new StageThree(parent);
+    }
+
+    public static class StageThree {
+
+        static Pane parent;
+
+        public StageThree(Pane theParent) {
+
+            Stage stage = new Stage();
+            parent = theParent;
+            parent.setDisable(true);
+            start(stage);
+
+        }
+        public void start(Stage stage) {
+
+            Pane root = new Pane();
+            Scene scene = new Scene(root, 1024, 768);
+            stage.setTitle("Economics quiz");
+            stage.setScene(scene);
+            stage.setOnCloseRequest((WindowEvent we) -> closeStage(stage));
+            stage.show();
+
+            proListView = new ListView<>();
+            proListView.setLayoutX(700);
+            proListView.setLayoutY(60);
+        }
+        public void closeStage(Stage stage) {
+
+            parent.setDisable(false);
+            stage.close();
+
+        }
+
+    }
+
+        private static void displayCloseDialog(WindowEvent we) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setContentText("Are you sure you want to quiz");
 
