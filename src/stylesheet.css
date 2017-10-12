@@ -37,3 +37,20 @@
 .root {
     -fx-background-image: url("background.jpg");
 }
+
+.answer_button {
+    -fx-font-family:georgia, serif;
+    -fx-text-fill:#786E69;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+
+
+.questions_button {
+    -fx-font-family: times, Times New Roman, times-roman, georgia, serif;
+    -fx-text-fill: #444;
+    -fx-padding: 0px 0px 6px 0px;
+    -fx-font-size: 25px;
+    line-height: 44px;
+    -fx-font-weight: bold;
+}

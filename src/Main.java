@@ -109,7 +109,7 @@ public class Main extends Application {
             btn.setLayoutX(304);
             btn.getStyleClass().add("start_button");
             btn.setLayoutY(340);
-            btn.setOnAction((ActionEvent ae) -> openNewStage(root));
+            btn.setOnAction((ActionEvent ae) -> openNewStage2(root));
             root.getChildren().add(btn);
 
             Button btn2 = new Button();
@@ -117,7 +117,7 @@ public class Main extends Application {
             btn2.setLayoutX(470);
             btn2.getStyleClass().add("start_button");
             btn2.setLayoutY(340);
-            btn2.setOnAction((ActionEvent ae) -> openNewStage2(root));
+            btn2.setOnAction((ActionEvent ae) -> openNewStage(root));
             root.getChildren().add(btn2);
         }
 
@@ -152,12 +152,63 @@ public class Main extends Application {
             Scene scene = new Scene(root, 1024, 768);
             stage.setTitle("Economics quiz");
             stage.setScene(scene);
+            scene.getStylesheets().add("stylesheet.css");
             stage.setOnCloseRequest((WindowEvent we) -> closeStage(stage));
             stage.show();
 
             proListView = new ListView<>();
             proListView.setLayoutX(700);
             proListView.setLayoutY(60);
+
+            Label label = new Label("The equilibrium market price can be defined as the price at which: ");
+            label.setLayoutX(169);
+            label.getStyleClass().add("questions_button");
+            label.setLayoutY(210);
+            root.getChildren().add(label);
+
+            Label label2 = new Label("Question 1:");
+            label2.setLayoutX(189);
+            label2.getStyleClass().add("questions_button");
+            label2.setLayoutY(160);
+            root.getChildren().add(label2);
+
+            CheckBox cb = new CheckBox();
+            cb.setText("A.  The market for the product clears");
+            cb.setLayoutX(370);
+            cb.getStyleClass().add("answer_button");
+            cb.setLayoutY(340);
+            root.getChildren().add(cb);
+
+            CheckBox cb2 = new CheckBox();
+            cb2.setText("B.  The PED equals the PES");
+            cb2.setLayoutX(370);
+            cb2.getStyleClass().add("answer_button");
+            cb2.setLayoutY(380);
+            root.getChildren().add(cb2);
+
+            CheckBox cb3 = new CheckBox();
+            cb3.setText("C.  Producers maximise their profits");
+            cb3.setLayoutX(370);
+            cb3.getStyleClass().add("answer_button");
+            cb3.setLayoutY(420);
+            root.getChildren().add(cb3);
+
+            CheckBox cb4 = new CheckBox();
+            cb4.setText("D.  Positive excess demand equals negative supply");
+            cb4.setLayoutX(370);
+            cb4.getStyleClass().add("answer_button");
+            cb4.setLayoutY(480);
+            root.getChildren().add(cb4);
+
+            Button btn5 = new Button();
+            btn5.setText("Next");
+            btn5.setLayoutX(470);
+            btn5.getStyleClass().add("start_button");
+            btn5.setLayoutY(540);
+            btn5.setOnAction((ActionEvent ae) -> openNewStage2(root));
+            root.getChildren().add(btn5);
+
+
         }
         public void closeStage(Stage stage) {
 
