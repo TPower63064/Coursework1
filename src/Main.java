@@ -205,7 +205,7 @@ public class Main extends Application {
             btn5.setLayoutX(470);
             btn5.getStyleClass().add("start_button");
             btn5.setLayoutY(540);
-            btn5.setOnAction((ActionEvent ae) -> openNewStage2(root));
+            btn5.setOnAction((ActionEvent ae) -> openNewStage3(root));
             root.getChildren().add(btn5);
 
 
@@ -219,7 +219,275 @@ public class Main extends Application {
 
     }
 
-        private static void displayCloseDialog(WindowEvent we) {
+    private static void openNewStage3(Pane parent) {
+        new StageFour(parent);
+    }
+
+    public static class StageFour {
+
+        static Pane parent;
+
+        public StageFour(Pane theParent) {
+
+            Stage stage = new Stage();
+            parent = theParent;
+            parent.setDisable(true);
+            start(stage);
+
+        }
+
+        public void start(Stage stage) {
+
+            Pane root = new Pane();
+            Scene scene = new Scene(root, 1024, 768);
+            stage.setTitle("Economics quiz");
+            stage.setScene(scene);
+            scene.getStylesheets().add("stylesheet.css");
+            stage.setOnCloseRequest((WindowEvent we) -> closeStage(stage));
+            stage.show();
+
+            proListView = new ListView<>();
+            proListView.setLayoutX(700);
+            proListView.setLayoutY(60);
+
+            Label label = new Label("Diseconomies of scale occur when:");
+            label.setLayoutX(169);
+            label.getStyleClass().add("questions_button");
+            label.setLayoutY(210);
+            root.getChildren().add(label);
+
+            Label label2 = new Label("Question 2:");
+            label2.setLayoutX(189);
+            label2.getStyleClass().add("questions_button");
+            label2.setLayoutY(160);
+            root.getChildren().add(label2);
+
+            CheckBox cb = new CheckBox();
+            cb.setText("A.  Average cost falls due to the growth of a firm.");
+            cb.setLayoutX(370);
+            cb.getStyleClass().add("answer_button");
+            cb.setLayoutY(340);
+            root.getChildren().add(cb);
+
+            CheckBox cb2 = new CheckBox();
+            cb2.setText("B.  Average cost rises due to a firm reducing its output ");
+            cb2.setLayoutX(370);
+            cb2.getStyleClass().add("answer_button");
+            cb2.setLayoutY(380);
+            root.getChildren().add(cb2);
+
+            CheckBox cb3 = new CheckBox();
+            cb3.setText("C.  Total cost rises due to the growth of a firm");
+            cb3.setLayoutX(370);
+            cb3.getStyleClass().add("answer_button");
+            cb3.setLayoutY(420);
+            root.getChildren().add(cb3);
+
+            CheckBox cb4 = new CheckBox();
+            cb4.setText("D.  Average cost rises due to the growth of a firm");
+            cb4.setLayoutX(370);
+            cb4.getStyleClass().add("answer_button");
+            cb4.setLayoutY(480);
+            root.getChildren().add(cb4);
+
+            Button btn5 = new Button();
+            btn5.setText("Next");
+            btn5.setLayoutX(470);
+            btn5.getStyleClass().add("start_button");
+            btn5.setLayoutY(540);
+            btn5.setOnAction((ActionEvent ae) -> openNewStage4(root));
+            root.getChildren().add(btn5);
+        }
+
+        public void closeStage(Stage stage) {
+
+            parent.setDisable(false);
+            stage.close();
+
+        }
+    }
+
+    private static void openNewStage4(Pane parent) {
+        new StageFive(parent);
+    }
+
+    public static class StageFive {
+
+        static Pane parent;
+
+        public StageFive(Pane theParent) {
+
+            Stage stage = new Stage();
+            parent = theParent;
+            parent.setDisable(true);
+            start(stage);
+
+        }
+
+        public void start(Stage stage) {
+
+            Pane root = new Pane();
+            Scene scene = new Scene(root, 1024, 768);
+            stage.setTitle("Economics quiz");
+            stage.setScene(scene);
+            scene.getStylesheets().add("stylesheet.css");
+            stage.setOnCloseRequest((WindowEvent we) -> closeStage(stage));
+            stage.show();
+
+            proListView = new ListView<>();
+            proListView.setLayoutX(700);
+            proListView.setLayoutY(60);
+
+            Label label = new Label("Which one of the following is most likely to make a market more competitive? :");
+            label.setLayoutX(169);
+            label.getStyleClass().add("questions_button");
+            label.setLayoutY(210);
+            root.getChildren().add(label);
+
+            Label label2 = new Label("Question 3:");
+            label2.setLayoutX(189);
+            label2.getStyleClass().add("questions_button");
+            label2.setLayoutY(160);
+            root.getChildren().add(label2);
+
+            CheckBox cb = new CheckBox();
+            cb.setText("A.  An increase in the cost of equipment used in the production process.");
+            cb.setLayoutX(370);
+            cb.getStyleClass().add("answer_button");
+            cb.setLayoutY(340);
+            root.getChildren().add(cb);
+
+            CheckBox cb2 = new CheckBox();
+            cb2.setText("B.  The development of a successful new product by the largest firm in the market.");
+            cb2.setLayoutX(370);
+            cb2.getStyleClass().add("answer_button");
+            cb2.setLayoutY(380);
+            root.getChildren().add(cb2);
+
+            CheckBox cb3 = new CheckBox();
+            cb3.setText("C.  An increase in the degree of concentration in the market.");
+            cb3.setLayoutX(370);
+            cb3.getStyleClass().add("answer_button");
+            cb3.setLayoutY(420);
+            root.getChildren().add(cb3);
+
+            CheckBox cb4 = new CheckBox();
+            cb4.setText("D.  The removal of legal barriers to entry into the market.");
+            cb4.setLayoutX(370);
+            cb4.getStyleClass().add("answer_button");
+            cb4.setLayoutY(480);
+            root.getChildren().add(cb4);
+
+            Button btn5 = new Button();
+            btn5.setText("Next");
+            btn5.setLayoutX(470);
+            btn5.getStyleClass().add("start_button");
+            btn5.setLayoutY(540);
+            btn5.setOnAction((ActionEvent ae) -> openNewStage5(root));
+            root.getChildren().add(btn5);
+
+
+        }
+
+        public void closeStage(Stage stage) {
+
+            parent.setDisable(false);
+            stage.close();
+
+        }
+    }
+
+    private static void openNewStage5(Pane parent) {
+        new StageSix(parent);
+    }
+
+    public static class StageSix {
+
+        static Pane parent;
+
+        public StageSix(Pane theParent) {
+
+            Stage stage = new Stage();
+            parent = theParent;
+            parent.setDisable(true);
+            start(stage);
+
+        }
+
+        public void start(Stage stage) {
+
+            Pane root = new Pane();
+            Scene scene = new Scene(root, 1024, 768);
+            stage.setTitle("Economics quiz");
+            stage.setScene(scene);
+            scene.getStylesheets().add("stylesheet.css");
+            stage.setOnCloseRequest((WindowEvent we) -> closeStage(stage));
+            stage.show();
+
+            proListView = new ListView<>();
+            proListView.setLayoutX(700);
+            proListView.setLayoutY(60);
+
+            Label label = new Label("Diseconomies of scale occur when:");
+            label.setLayoutX(169);
+            label.getStyleClass().add("questions_button");
+            label.setLayoutY(210);
+            root.getChildren().add(label);
+
+            Label label2 = new Label("Question 2:");
+            label2.setLayoutX(189);
+            label2.getStyleClass().add("questions_button");
+            label2.setLayoutY(160);
+            root.getChildren().add(label2);
+
+            CheckBox cb = new CheckBox();
+            cb.setText("A.  Average cost falls due to the growth of a firm.");
+            cb.setLayoutX(370);
+            cb.getStyleClass().add("answer_button");
+            cb.setLayoutY(340);
+            root.getChildren().add(cb);
+
+            CheckBox cb2 = new CheckBox();
+            cb2.setText("B.  Average cost rises due to a firm reducing its output ");
+            cb2.setLayoutX(370);
+            cb2.getStyleClass().add("answer_button");
+            cb2.setLayoutY(380);
+            root.getChildren().add(cb2);
+
+            CheckBox cb3 = new CheckBox();
+            cb3.setText("C.  Total cost rises due to the growth of a firm");
+            cb3.setLayoutX(370);
+            cb3.getStyleClass().add("answer_button");
+            cb3.setLayoutY(420);
+            root.getChildren().add(cb3);
+
+            CheckBox cb4 = new CheckBox();
+            cb4.setText("D.  Average cost rises due to the growth of a firm");
+            cb4.setLayoutX(370);
+            cb4.getStyleClass().add("answer_button");
+            cb4.setLayoutY(480);
+            root.getChildren().add(cb4);
+
+            Button btn5 = new Button();
+            btn5.setText("Next");
+            btn5.setLayoutX(470);
+            btn5.getStyleClass().add("start_button");
+            btn5.setLayoutY(540);
+            btn5.setOnAction((ActionEvent ae) -> openNewStage2(root));
+            root.getChildren().add(btn5);
+        }
+
+        public void closeStage(Stage stage) {
+
+            parent.setDisable(false);
+            stage.close();
+
+        }
+    }
+
+
+
+    private static void displayCloseDialog(WindowEvent we) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setContentText("Are you sure you want to quiz");
 

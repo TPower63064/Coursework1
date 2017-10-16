@@ -40,7 +40,7 @@
 
 .answer_button {
     -fx-font-family:georgia, serif;
-    -fx-text-fill:#786E69;
+    -fx-text-fill: #232323;
     -fx-font-size: 15px;
     -fx-font-weight: bold;
 }
