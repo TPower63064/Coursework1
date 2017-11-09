@@ -1,4 +1,6 @@
 
+import Model.AnswerService;
+import Model.DatabaseConnection;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.scene.Scene;
@@ -7,12 +9,14 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
+import java.io.Console;
 import java.util.ArrayList;
 import java.util.Optional;
 
 public class Main extends Application {
     private static TextField txtFieldMessage;
     private static ListView<Main> proListView;
+    public static DatabaseConnection database;
 
 
     @Override
@@ -70,6 +74,7 @@ public class Main extends Application {
 
         stage.show();
         stage.setOnCloseRequest ((WindowEvent we) -> displayCloseDialog(we));
+
     }
 
 
