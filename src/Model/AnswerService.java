@@ -6,7 +6,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+
 public class AnswerService {
+
 
     public static void selectById(int answerID, DatabaseConnection database) {
     }

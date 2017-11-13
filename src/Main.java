@@ -38,6 +38,7 @@ public class Main extends Application {
         label.setLayoutY(190);
         root.getChildren().add(label);
 
+
         Label label2 = new Label("Student ID");
         label2.setLayoutX(189);
         label2.getStyleClass().add("label_button");

@@ -16,6 +16,7 @@ public class databasetest {
         for (Answer c: testList) {
             System.out.println(c);
         }
+
     }
 
 }
