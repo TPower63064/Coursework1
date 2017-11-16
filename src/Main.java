@@ -9,18 +9,23 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
+import javax.swing.*;
 import java.io.Console;
 import java.util.ArrayList;
 import java.util.Optional;
 
 public class Main extends Application {
     private static TextField txtFieldMessage;
+    private static PasswordField txtFieldPassword;
     private static ListView<Main> proListView;
     public static DatabaseConnection database;
 
 
     @Override
     public void start(Stage stage) throws Exception {
+        database = new DatabaseConnection("Database.db");
+
+
         Pane root = new Pane();
         Scene scene = new Scene(root, 1024, 768);
         stage.setScene(scene);
@@ -57,11 +62,11 @@ public class Main extends Application {
         txtFieldMessage.setPrefWidth(250);
         root.getChildren().add(txtFieldMessage);
 
-        txtFieldMessage = new TextField();
-        txtFieldMessage.setLayoutX(270);
-        txtFieldMessage.setLayoutY(290);
-        txtFieldMessage.setPrefWidth(250);
-        root.getChildren().add(txtFieldMessage);
+        txtFieldPassword = new PasswordField();
+        txtFieldPassword.setLayoutX(270);
+        txtFieldPassword.setLayoutY(290);
+        txtFieldPassword.setPrefWidth(250);
+        root.getChildren().add(txtFieldPassword);
 
         Button btn = new Button();
         btn.setText("Enter");

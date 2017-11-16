@@ -6,7 +6,7 @@ public class databasetest {
 
     public static DatabaseConnection database;
 
-    public static void main(String[] Args){
+    public static void main(String[] Args) throws Exception{
 
         database = new DatabaseConnection("Database.db");
         ArrayList<Answer> testList = new ArrayList<>();

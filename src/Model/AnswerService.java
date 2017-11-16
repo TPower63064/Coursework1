@@ -5,9 +5,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class AnswerService {
+
+    public static void selectAll(List<Console> targetList, DatabaseConnection database) { }
 
 
     public static void selectById(int answerID, DatabaseConnection database) {
@@ -31,7 +34,10 @@ public class AnswerService {
 
                 if (results != null) {
                     while (results.next()) {
-                        targetList.add(new Answer(results.getInt("AnswerID"), results.getString("Answer"), results.getInt("QuestionID")));
+                        targetList.add(new Answer(
+                                results.getInt("AnswerID"),
+                                results.getInt("QuestionID"),
+                                results.getString("Answer")));
                     }
                 }
             }
