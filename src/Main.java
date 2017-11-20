@@ -1,5 +1,4 @@
 
-import Model.AnswerService;
 import Model.DatabaseConnection;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -8,10 +7,6 @@ import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
-
-import javax.swing.*;
-import java.io.Console;
-import java.util.ArrayList;
 import java.util.Optional;
 
 public class Main extends Application {
