@@ -119,7 +119,7 @@ public class Main extends Application {
             root.getChildren().add(btn);
 
             Button btn2 = new Button();
-            btn2.setText("Give feedback");
+            btn2.setText("Feedback");
             btn2.setLayoutX(470);
             btn2.getStyleClass().add("start_button");
             btn2.setLayoutY(340);

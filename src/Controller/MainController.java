@@ -1,4 +1,4 @@
 package Controller;
 
-public class MainController {
+public class MainController{
 }
