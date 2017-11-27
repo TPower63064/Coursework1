@@ -123,7 +123,7 @@ public class Main extends Application {
             btn2.setLayoutX(470);
             btn2.getStyleClass().add("start_button");
             btn2.setLayoutY(340);
-            btn2.setOnAction((ActionEvent ae) -> openNewStage(root));
+            btn2.setOnAction((ActionEvent ae) -> openNewStage7(root));
             root.getChildren().add(btn2);
         }
 
@@ -403,6 +403,7 @@ public class Main extends Application {
         }
     }
 
+
     private static void openNewStage5(Pane parent) {
         new StageSix(parent);
     }
@@ -434,41 +435,41 @@ public class Main extends Application {
             proListView.setLayoutX(700);
             proListView.setLayoutY(60);
 
-            Label label = new Label("Diseconomies of scale occur when:");
+            Label label = new Label("Which one of the following situations would lead to an increase in equilibrium price?");
             label.setLayoutX(169);
             label.getStyleClass().add("questions_button");
             label.setLayoutY(210);
             root.getChildren().add(label);
 
-            Label label2 = new Label("Question 2:");
+            Label label2 = new Label("Question 4:");
             label2.setLayoutX(189);
             label2.getStyleClass().add("questions_button");
             label2.setLayoutY(160);
             root.getChildren().add(label2);
 
             CheckBox cb = new CheckBox();
-            cb.setText("A.  Average cost falls due to the growth of a firm.");
+            cb.setText("A.  Demand is perfectly inelastic and a firm’s labour costs fall.");
             cb.setLayoutX(370);
             cb.getStyleClass().add("answer_button");
             cb.setLayoutY(340);
             root.getChildren().add(cb);
 
             CheckBox cb2 = new CheckBox();
-            cb2.setText("B.  Average cost rises due to a firm reducing its output ");
+            cb2.setText("B.  Demand is perfectly elastic and a firm’s labour costs rise. ");
             cb2.setLayoutX(370);
             cb2.getStyleClass().add("answer_button");
             cb2.setLayoutY(380);
             root.getChildren().add(cb2);
 
             CheckBox cb3 = new CheckBox();
-            cb3.setText("C.  Total cost rises due to the growth of a firm");
+            cb3.setText("C.  Supply is perfectly elastic and the price of a substitute good falls.");
             cb3.setLayoutX(370);
             cb3.getStyleClass().add("answer_button");
             cb3.setLayoutY(420);
             root.getChildren().add(cb3);
 
             CheckBox cb4 = new CheckBox();
-            cb4.setText("D.  Average cost rises due to the growth of a firm");
+            cb4.setText("D.  Demand is perfectly inelastic and a firm’s labour costs rise.");
             cb4.setLayoutX(370);
             cb4.getStyleClass().add("answer_button");
             cb4.setLayoutY(480);
@@ -479,7 +480,7 @@ public class Main extends Application {
             btn5.setLayoutX(470);
             btn5.getStyleClass().add("start_button");
             btn5.setLayoutY(540);
-            btn5.setOnAction((ActionEvent ae) -> openNewStage2(root));
+            btn5.setOnAction((ActionEvent ae) -> openNewStage6(root));
             root.getChildren().add(btn5);
         }
 
@@ -490,6 +491,159 @@ public class Main extends Application {
 
         }
     }
+
+    private static void openNewStage6(Pane parent) {
+        new StageSeven(parent);
+    }
+
+    public static class StageSeven {
+
+        static Pane parent;
+
+        public StageSeven(Pane theParent) {
+
+            Stage stage = new Stage();
+            parent = theParent;
+            parent.setDisable(true);
+            start(stage);
+
+        }
+
+        public void start(Stage stage) {
+
+            Pane root = new Pane();
+            Scene scene = new Scene(root, 1024, 768);
+            stage.setTitle("Economics quiz");
+            stage.setScene(scene);
+            scene.getStylesheets().add("stylesheet.css");
+            stage.setOnCloseRequest((WindowEvent we) -> closeStage(stage));
+            stage.show();
+
+            proListView = new ListView<>();
+            proListView.setLayoutX(700);
+            proListView.setLayoutY(60);
+
+            Label label = new Label("Which one of the following is true? ");
+            label.setLayoutX(169);
+            label.getStyleClass().add("questions_button");
+            label.setLayoutY(210);
+            root.getChildren().add(label);
+
+            Label label2 = new Label("Question 5:");
+            label2.setLayoutX(189);
+            label2.getStyleClass().add("questions_button");
+            label2.setLayoutY(160);
+            root.getChildren().add(label2);
+
+            CheckBox cb = new CheckBox();
+            cb.setText("A.  A positive statement is one which can be tested against the facts. ");
+            cb.setLayoutX(370);
+            cb.getStyleClass().add("answer_button");
+            cb.setLayoutY(340);
+            root.getChildren().add(cb);
+
+            CheckBox cb2 = new CheckBox();
+            cb2.setText("B.  A positive statement is one which never contains words such as ‘could’ or ‘should’.");
+            cb2.setLayoutX(370);
+            cb2.getStyleClass().add("answer_button");
+            cb2.setLayoutY(380);
+            root.getChildren().add(cb2);
+
+            CheckBox cb3 = new CheckBox();
+            cb3.setText("C.  A normative statement is one which can be scientifically proven to be true or false. ");
+            cb3.setLayoutX(370);
+            cb3.getStyleClass().add("answer_button");
+            cb3.setLayoutY(420);
+            root.getChildren().add(cb3);
+
+            CheckBox cb4 = new CheckBox();
+            cb4.setText("D.  A normative statement is one which never contains words such as ‘is’ or ‘will’ or ‘always’.");
+            cb4.setLayoutX(370);
+            cb4.getStyleClass().add("answer_button");
+            cb4.setLayoutY(480);
+            root.getChildren().add(cb4);
+
+            Button btn5 = new Button();
+            btn5.setText("Next");
+            btn5.setLayoutX(470);
+            btn5.getStyleClass().add("start_button");
+            btn5.setLayoutY(540);
+            btn5.setOnAction((ActionEvent ae) -> openNewStage7(root));
+            root.getChildren().add(btn5);
+        }
+
+        public void closeStage(Stage stage) {
+
+            parent.setDisable(false);
+            stage.close();
+
+        }
+    }
+
+
+    private static void openNewStage7(Pane parent) {
+        new StageEight(parent);
+    }
+
+    public static class StageEight{
+
+        static Pane parent;
+
+        public StageEight(Pane theParent) {
+
+            Stage stage = new Stage();
+            parent = theParent;
+            parent.setDisable(true);
+            start(stage);
+
+        }
+
+        public void start(Stage stage) {
+
+            Pane root = new Pane();
+            Scene scene = new Scene(root, 1024, 768);
+            stage.setTitle("Economics quiz");
+            stage.setScene(scene);
+            scene.getStylesheets().add("stylesheet.css");
+            stage.setOnCloseRequest((WindowEvent we) -> closeStage(stage));
+            stage.show();
+
+            proListView = new ListView<>();
+            proListView.setLayoutX(700);
+            proListView.setLayoutY(60);
+
+            Label label3 = new Label("Feedback");
+            label3.setLayoutX(189);
+//            label3.getStyleClass().add("feedback_button");
+            label3.setLayoutY(290);
+            root.getChildren().add(label3);
+
+            txtFieldMessage = new TextField();
+            txtFieldMessage.setLayoutX(270);
+            txtFieldMessage.setLayoutY(240);
+            txtFieldMessage.setPrefWidth(400);
+            root.getChildren().add(txtFieldMessage);
+
+            Button btn5 = new Button();
+            btn5.setText("Finish");
+            btn5.setLayoutX(470);
+            btn5.getStyleClass().add("start_button");
+            btn5.setLayoutY(540);
+            btn5.setOnAction((ActionEvent ae) -> openNewStage6(root));
+            root.getChildren().add(btn5);
+        }
+
+        public void closeStage(Stage stage) {
+
+            parent.setDisable(false);
+            stage.close();
+
+        }
+    }
+
+
+
+
 
 
 
