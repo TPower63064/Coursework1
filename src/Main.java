@@ -613,24 +613,24 @@ public class Main extends Application {
             proListView.setLayoutY(60);
 
             Label label3 = new Label("Feedback");
-            label3.setLayoutX(189);
-//            label3.getStyleClass().add("feedback_button");
-            label3.setLayoutY(290);
+            label3.setLayoutX(380);
+            label3.getStyleClass().add("feedback_label");
+            label3.setLayoutY(200);
             root.getChildren().add(label3);
 
             txtFieldMessage = new TextField();
             txtFieldMessage.setLayoutX(270);
             txtFieldMessage.setLayoutY(240);
-            txtFieldMessage.setPrefWidth(400);
+            txtFieldMessage.setPrefSize(400,200);
             root.getChildren().add(txtFieldMessage);
 
             Button btn5 = new Button();
             btn5.setText("Finish");
-            btn5.setLayoutX(470);
+            btn5.setLayoutX(400);
             btn5.getStyleClass().add("start_button");
-            btn5.setLayoutY(540);
-            btn5.setOnAction((ActionEvent ae) -> openNewStage6(root));
+            btn5.setLayoutY(470);
             root.getChildren().add(btn5);
+            btn5.setOnAction((ActionEvent ae) -> stage.close());
         }
 
         public void closeStage(Stage stage) {
@@ -640,11 +640,6 @@ public class Main extends Application {
 
         }
     }
-
-
-
-
-
 
 
     private static void displayCloseDialog(WindowEvent we) {
