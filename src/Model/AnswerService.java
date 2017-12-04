@@ -10,19 +10,6 @@ import java.util.List;
 
 public class AnswerService {
 
-    public static void selectAll(List<Console> targetList, DatabaseConnection database) { }
-
-
-    public static void selectById(int answerID, DatabaseConnection database) {
-    }
-
-    public static void save(Console console, DatabaseConnection database) {
-    }
-
-    public static void deleteById(int id, DatabaseConnection database) {
-    }
-
-
     public static void selectAll(ArrayList<Answer> targetList, DatabaseConnection database) {
 
         PreparedStatement statement = database.newStatement("SELECT AnswerID, Answer FROM Answer ORDER BY AnswerID");
@@ -46,6 +33,8 @@ public class AnswerService {
         }
 
     }
+
+
 }
 
 

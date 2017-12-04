@@ -1,5 +1,7 @@
 
 import Model.DatabaseConnection;
+import Model.Question;
+import Model.QuestionService;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.scene.Scene;
@@ -7,6 +9,8 @@ import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
+
+import java.util.ArrayList;
 import java.util.Optional;
 
 public class Main extends Application {
@@ -149,10 +153,16 @@ public class Main extends Application {
             Stage stage = new Stage();
             parent = theParent;
             parent.setDisable(true);
-            start(stage);
+
+            ArrayList<Question> allTheQuestions = new ArrayList<>();
+            QuestionService.selectAll(allTheQuestions, database);
+            Question question = allTheQuestions.get(0);
+
+            start(stage, question);
 
         }
-        public void start(Stage stage) {
+
+        public void start(Stage stage, Question question) {
 
             Pane root = new Pane();
             Scene scene = new Scene(root, 1024, 768);
@@ -166,7 +176,7 @@ public class Main extends Application {
             proListView.setLayoutX(700);
             proListView.setLayoutY(60);
 
-            Label label = new Label("The equilibrium market price can be defined as the price at which: ");
+            Label label = new Label(question.getQuestion());
             label.setLayoutX(169);
             label.getStyleClass().add("questions_button");
             label.setLayoutY(210);
@@ -178,33 +188,18 @@ public class Main extends Application {
             label2.setLayoutY(160);
             root.getChildren().add(label2);
 
-            CheckBox cb = new CheckBox();
-            cb.setText("A.  The market for the product clears");
-            cb.setLayoutX(370);
-            cb.getStyleClass().add("answer_button");
-            cb.setLayoutY(340);
-            root.getChildren().add(cb);
+            CheckBox cb[] = new CheckBox[4];
+            for (int i = 0; i < 4; i++) {
 
-            CheckBox cb2 = new CheckBox();
-            cb2.setText("B.  The PED equals the PES");
-            cb2.setLayoutX(370);
-            cb2.getStyleClass().add("answer_button");
-            cb2.setLayoutY(380);
-            root.getChildren().add(cb2);
+                cb[i] = new CheckBox();
+                cb[i].setText(question.getAnswers()[i]);
+                cb[i].setLayoutX(370);
+                cb[i].getStyleClass().add("answer_button");
+                cb[i].setLayoutY(340 + i * 40);
+                root.getChildren().add(cb[i]);
 
-            CheckBox cb3 = new CheckBox();
-            cb3.setText("C.  Producers maximise their profits");
-            cb3.setLayoutX(370);
-            cb3.getStyleClass().add("answer_button");
-            cb3.setLayoutY(420);
-            root.getChildren().add(cb3);
+            }
 
-            CheckBox cb4 = new CheckBox();
-            cb4.setText("D.  Positive excess demand equals negative supply");
-            cb4.setLayoutX(370);
-            cb4.getStyleClass().add("answer_button");
-            cb4.setLayoutY(480);
-            root.getChildren().add(cb4);
 
             Button btn5 = new Button();
             btn5.setText("Next");
@@ -238,11 +233,16 @@ public class Main extends Application {
             Stage stage = new Stage();
             parent = theParent;
             parent.setDisable(true);
-            start(stage);
+
+            ArrayList<Question> allTheQuestions = new ArrayList<>();
+            QuestionService.selectAll(allTheQuestions, database);
+            Question question = allTheQuestions.get(1);
+
+            start(stage, question);
 
         }
 
-        public void start(Stage stage) {
+        public void start(Stage stage, Question question) {
 
             Pane root = new Pane();
             Scene scene = new Scene(root, 1024, 768);
@@ -256,7 +256,7 @@ public class Main extends Application {
             proListView.setLayoutX(700);
             proListView.setLayoutY(60);
 
-            Label label = new Label("Diseconomies of scale occur when:");
+            Label label = new Label(question.getQuestion());
             label.setLayoutX(169);
             label.getStyleClass().add("questions_button");
             label.setLayoutY(210);
@@ -268,33 +268,15 @@ public class Main extends Application {
             label2.setLayoutY(160);
             root.getChildren().add(label2);
 
-            CheckBox cb = new CheckBox();
-            cb.setText("A.  Average cost falls due to the growth of a firm.");
-            cb.setLayoutX(370);
-            cb.getStyleClass().add("answer_button");
-            cb.setLayoutY(340);
-            root.getChildren().add(cb);
+            CheckBox cb2[] = new CheckBox[4];
+            for (int i = 0; i < 4; i++) {
+                cb2[i].setText(question.getAnswers()[i]);
+                cb2[i].setLayoutX(370);
+                cb2[i].getStyleClass().add("answer_button");
+                cb2[i].setLayoutY(340 + i * 40);
+                root.getChildren().add(cb2[i]);
+            }
 
-            CheckBox cb2 = new CheckBox();
-            cb2.setText("B.  Average cost rises due to a firm reducing its output ");
-            cb2.setLayoutX(370);
-            cb2.getStyleClass().add("answer_button");
-            cb2.setLayoutY(380);
-            root.getChildren().add(cb2);
-
-            CheckBox cb3 = new CheckBox();
-            cb3.setText("C.  Total cost rises due to the growth of a firm");
-            cb3.setLayoutX(370);
-            cb3.getStyleClass().add("answer_button");
-            cb3.setLayoutY(420);
-            root.getChildren().add(cb3);
-
-            CheckBox cb4 = new CheckBox();
-            cb4.setText("D.  Average cost rises due to the growth of a firm");
-            cb4.setLayoutX(370);
-            cb4.getStyleClass().add("answer_button");
-            cb4.setLayoutY(480);
-            root.getChildren().add(cb4);
 
             Button btn5 = new Button();
             btn5.setText("Next");
@@ -321,16 +303,21 @@ public class Main extends Application {
 
         static Pane parent;
 
-        public StageFive(Pane theParent) {
+        public StageFive (Pane theParent) {
 
             Stage stage = new Stage();
             parent = theParent;
             parent.setDisable(true);
-            start(stage);
+
+            ArrayList<Question> allTheQuestions = new ArrayList<>();
+            QuestionService.selectAll(allTheQuestions, database);
+            Question question = allTheQuestions.get(2);
+
+            start(stage, question);
 
         }
 
-        public void start(Stage stage) {
+        public void start(Stage stage, Question question) {
 
             Pane root = new Pane();
             Scene scene = new Scene(root, 1024, 768);
@@ -344,7 +331,7 @@ public class Main extends Application {
             proListView.setLayoutX(700);
             proListView.setLayoutY(60);
 
-            Label label = new Label("Which one of the following is most likely to make a market more competitive? :");
+            Label label = new Label(question.getQuestion());
             label.setLayoutX(169);
             label.getStyleClass().add("questions_button");
             label.setLayoutY(210);
@@ -356,33 +343,15 @@ public class Main extends Application {
             label2.setLayoutY(160);
             root.getChildren().add(label2);
 
-            CheckBox cb = new CheckBox();
-            cb.setText("A.  An increase in the cost of equipment used in the production process.");
-            cb.setLayoutX(370);
-            cb.getStyleClass().add("answer_button");
-            cb.setLayoutY(340);
-            root.getChildren().add(cb);
+            CheckBox cb3[] = new CheckBox[4];
+            for (int i = 0; i < 4; i++) {
 
-            CheckBox cb2 = new CheckBox();
-            cb2.setText("B.  The development of a successful new product by the largest firm in the market.");
-            cb2.setLayoutX(370);
-            cb2.getStyleClass().add("answer_button");
-            cb2.setLayoutY(380);
-            root.getChildren().add(cb2);
-
-            CheckBox cb3 = new CheckBox();
-            cb3.setText("C.  An increase in the degree of concentration in the market.");
-            cb3.setLayoutX(370);
-            cb3.getStyleClass().add("answer_button");
-            cb3.setLayoutY(420);
-            root.getChildren().add(cb3);
-
-            CheckBox cb4 = new CheckBox();
-            cb4.setText("D.  The removal of legal barriers to entry into the market.");
-            cb4.setLayoutX(370);
-            cb4.getStyleClass().add("answer_button");
-            cb4.setLayoutY(480);
-            root.getChildren().add(cb4);
+                cb3[i].setText(question.getAnswers()[i]);
+                cb3[i].setLayoutX(370);
+                cb3[i].getStyleClass().add("answer_button");
+                cb3[i].setLayoutY(340 + i * 40);
+                root.getChildren().add(cb3[i]);
+            }
 
             Button btn5 = new Button();
             btn5.setText("Next");
