@@ -2,6 +2,7 @@
 import Model.DatabaseConnection;
 import Model.Question;
 import Model.QuestionService;
+import com.sun.org.apache.bcel.internal.generic.DUP;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.scene.Scene;
@@ -198,7 +199,7 @@ public class Main extends Application {
                 cb[i].setLayoutY(340 + i * 40);
                 root.getChildren().add(cb[i]);
 
-            }
+            }   
 
 
             Button btn5 = new Button();
@@ -223,8 +224,7 @@ public class Main extends Application {
     private static void openNewStage3(Pane parent) {
         new StageFour(parent);
     }
-
-    public static class StageFour {
+         public static class StageFour {
 
         static Pane parent;
 
@@ -268,13 +268,13 @@ public class Main extends Application {
             label2.setLayoutY(160);
             root.getChildren().add(label2);
 
-            CheckBox cb2[] = new CheckBox[4];
+            CheckBox cb1[] = new CheckBox[4];
             for (int i = 0; i < 4; i++) {
-                cb2[i].setText(question.getAnswers()[i]);
-                cb2[i].setLayoutX(370);
-                cb2[i].getStyleClass().add("answer_button");
-                cb2[i].setLayoutY(340 + i * 40);
-                root.getChildren().add(cb2[i]);
+                cb1[i].setText(question.getAnswers()[i]);
+                cb1[i].setLayoutX(370);
+                cb1[i].getStyleClass().add("answer_button");
+                cb1[i].setLayoutY(340 + i * 40);
+                root.getChildren().add(cb1[i]);
             }
 
 
@@ -298,6 +298,7 @@ public class Main extends Application {
     private static void openNewStage4(Pane parent) {
         new StageFive(parent);
     }
+    @SuppressWarnings("Duplicates")
 
     public static class StageFive {
 
@@ -343,14 +344,14 @@ public class Main extends Application {
             label2.setLayoutY(160);
             root.getChildren().add(label2);
 
-            CheckBox cb3[] = new CheckBox[4];
+            CheckBox cb[] = new CheckBox[4];
             for (int i = 0; i < 4; i++) {
 
-                cb3[i].setText(question.getAnswers()[i]);
-                cb3[i].setLayoutX(370);
-                cb3[i].getStyleClass().add("answer_button");
-                cb3[i].setLayoutY(340 + i * 40);
-                root.getChildren().add(cb3[i]);
+                cb[i].setText(question.getAnswers()[i]);
+                cb[i].setLayoutX(370);
+                cb[i].getStyleClass().add("answer_button");
+                cb[i].setLayoutY(340 + i * 40);
+                root.getChildren().add(cb[i]);
             }
 
             Button btn5 = new Button();
